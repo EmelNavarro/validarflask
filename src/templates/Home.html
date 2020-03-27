@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<script type="text/javascript">
+		window.onload = function(){ 
+		document.getElementById("boton").onclick=jvalidar;
+		}
+		function jvalidar(){
+		
+		var contrasegna=document.getElementById("valor").value;
+		var xpresionregular= new RegExp('(([A-Z]{1,1})([1-9]{3,3})([a-z]*)([^A-Za-z0-9_]{3,3}))');
+		if(xpresionregular.test(contrasegna)){
+			alert("Es una Contraseña valida");
+		}else{
+			alert("No es una Contraseña valida");	
+		}
+
+	}
+	</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Expresion Regular</title>
+	<!--BOOSTRAP 4-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!--CUSTOM CSS-->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+</head>
+<body>
+	<div class="container  ">
+	<fieldset>	
+
+	<legend><h2>Validador de Contraseñas: </h2></legend>
+	Contraseña:<input type="text" id="valor" ><br><br>
+	
+	<input type="button" id="boton" value="validar" > 
+  </div>
+</div>
+	</fieldset>
+</div>
+</body>
+</html>
